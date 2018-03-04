@@ -11,6 +11,11 @@ angular
   .module('app', [uiRouter, constants, components, services])
   .config(($stateProvider, $locationProvider, $urlRouterProvider) => {
     'ngInject';
+
+    const defaultMovies = ['264660', '8358', '106646', '284054'];
+    const initialMovie =
+      defaultMovies[Math.floor(Math.random() * defaultMovies.length)];
+
     $stateProvider.state('movie', {
       name: 'movie',
       url: '/movie/:movieId',
@@ -26,12 +31,8 @@ angular
       }
     });
 
-    const defaultMovies = ['264660', '8358', '106646', '284054'];
-    const initialMovie =
-      defaultMovies[Math.floor(Math.random() * defaultMovies.length)];
+    $urlRouterProvider.otherwise(`/movie/${initialMovie}`);
 
-    $urlRouterProvider.when('/', `/movie/${initialMovie}`);
-
-    $locationProvider.html5Mode(true);
+    // $locationProvider.html5Mode(true);
   })
   .component('app', appComponent);
