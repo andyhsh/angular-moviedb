@@ -1,0 +1,14 @@
+<div>
+  <div>Movie Poster</div>
+  <div>
+    <h1>{{ vm.movie.title | uppercase }}</h1>
+    <h2>{{ vm.movie.tagline }}</h2>
+    <p>{{ vm.movie.overview }}</p>
+    <ul>
+      <li>Runtime: {{ vm.movie.runtime }} minutes</li>
+      <li>Rating: {{ vm.movie.vote_average }} / 10</li>
+      <li>Box Office: {{ vm.movie.revenue | currency : '$' : 0 }}</li>
+      <li>Budget: {{ vm.movie.budget | currency : '$' : 0 }}</li>
+    </ul>
+  </div>
+</div>
