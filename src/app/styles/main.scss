@@ -1,0 +1,23 @@
+@import './_base';
+@import './components/header';
+@import './components/movie';
+@import './components/footer';
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Raleway');
+
+* {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.app {
+  width: 80%;
+  margin: 0 auto;
+  font-family: 'Open Sans', sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}

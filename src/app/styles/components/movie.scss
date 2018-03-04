@@ -1,0 +1,51 @@
+.movie {
+  background-size: cover;
+}
+
+.movie__background {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.movie__poster-wrapper img {
+  width: 100%;
+}
+
+.movie__title {
+  font-size: 60px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-family: $secondary-font;
+}
+
+.movie__tagline {
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: $primary-color;
+}
+
+.movie__overview {
+  margin-top: 0;
+}
+
+.movie__info-wrapper {
+  padding: 25px;
+  width: 60%;
+}
+
+.movie__meta-block {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie__meta-block li {
+  margin: 10px 20px 10px 0;
+  font-size: 12px;
+}
+
+.movie__meta-text {
+  display: block;
+  color: $primary-color;
+  font-size: 24px;
+}
