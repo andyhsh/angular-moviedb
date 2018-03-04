@@ -1,0 +1,17 @@
+<header>
+  <div>
+    <a>
+      <img src="https://angular.io/assets/images/logos/angularjs/AngularJS-Shield.svg">
+    </a>
+    <h1>Angular MovieDB</h1>
+  </div>
+  <div>
+    <input type="search" placeholder="Search for movies" ng-model="vm.query" ng-change="vm.handleInputChange()">
+    <ul>
+      <li ng-repeat="movies in vm.moviesList">
+        <a href="#">{{ movies.title }}</a>
+      </li>
+    </ul>
+  </div>
+  {{ vm.data | json }}
+</header>
