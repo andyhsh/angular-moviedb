@@ -22,12 +22,18 @@ export default class navbarController {
   }
 
   handleInputChange() {
+    this.query = this.query.trim();
     if (this.query.length > 3) {
-      this.moviesService.getMovies(this.query).then(result => {
-        this.moviesList = this.setJsonFormat(result.data.results.splice(0, 10));
+      this.moviesService.getMovies(this.query).then(data => {
+        this.moviesList = this.setJsonFormat(data.splice(0, 5));
       });
     } else {
       this.moviesList = [];
     }
+  }
+
+  handleClick() {
+    this.moviesList = [];
+    this.query = '';
   }
 }

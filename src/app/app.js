@@ -5,10 +5,11 @@ import appComponent from './app.component';
 import constants from './app.constants';
 import services from './core/services';
 import 'normalize.css';
+import './styles/main.scss';
 
 angular
   .module('app', [uiRouter, constants, components, services])
-  .config(($stateProvider, $locationProvider) => {
+  .config(($stateProvider, $locationProvider, $urlRouterProvider) => {
     'ngInject';
     $stateProvider.state('movie', {
       name: 'movie',
@@ -19,14 +20,17 @@ angular
           return moviesService
             .getMovie($transition$.params().movieId)
             .then(response => {
-              return response.data;
-            })
-            .catch(err => {
-              console.error('Error fetching movie');
+              return response;
             });
         }
       }
     });
+
+    const defaultMovies = ['264660', '8358', '106646', '284054'];
+    const initialMovie =
+      defaultMovies[Math.floor(Math.random() * defaultMovies.length)];
+
+    $urlRouterProvider.when('/', `/movie/${initialMovie}`);
 
     $locationProvider.html5Mode(true);
   })
