@@ -35,12 +35,21 @@ module.exports = {
           fallback: 'style-loader',
           use: ['css-loader', 'sass-loader']
         })
+      },
+      {
+        test: /\.css$/,
+        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }]
+      },
+      {
+        test: /\.html$/,
+        loader: 'raw-loader'
       }
     ]
   },
   plugins: [
     new HTMLWebpackPlugin({
-      template: './src/index.html'
+      template: './src/index.html',
+      inject: 'body'
     }),
     new ExtractTextPlugin({
       filename: 'css/app.bundle.css',
