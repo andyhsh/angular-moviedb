@@ -8,10 +8,10 @@
   <div>
     <input type="search" placeholder="Search for movies" ng-model="vm.query" ng-change="vm.handleInputChange()">
     <ul>
-      <li ng-repeat="movies in vm.moviesList">
-        <a href="#">{{ movies.title }}</a>
+      <li ng-repeat="movie in vm.moviesList" ui-sref="movie({ movieId: movie.id })">
+        <img ng-if="movie.img" ng-src="{{ movie.img }}" alt="{{ movie.title }}" />
+        <a>{{ movie.title }}</a>
       </li>
     </ul>
   </div>
-  {{ vm.data | json }}
 </header>
