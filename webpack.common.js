@@ -56,13 +56,5 @@ module.exports = {
       disable: false,
       allChunks: true
     })
-  ],
-  devtool: 'cheap-eval-source-map',
-  devServer: {
-    publicPath: '/',
-    contentBase: path.join(__dirname, 'dist'),
-    compress: true,
-    stats: 'errors-only',
-    open: true
-  }
+  ]
 };
