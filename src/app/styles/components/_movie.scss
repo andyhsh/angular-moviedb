@@ -9,10 +9,11 @@
 
 .movie__poster-wrapper img {
   width: 100%;
+  max-width: 400px;
 }
 
 .movie__title {
-  font-size: 60px;
+  font-size: 40px;
   margin-top: 0;
   margin-bottom: 15px;
   font-family: $secondary-font;

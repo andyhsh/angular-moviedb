@@ -23,7 +23,7 @@ export default class navbarController {
 
   handleInputChange() {
     this.query = this.query.trim();
-    if (this.query.length > 3) {
+    if (this.query.length > 0) {
       this.moviesService.getMovies(this.query).then(data => {
         this.moviesList = this.setJsonFormat(data.splice(0, 5));
       });
@@ -31,7 +31,7 @@ export default class navbarController {
       this.moviesList = [];
     }
   }
-
+  
   handleClick() {
     this.moviesList = [];
     this.query = '';

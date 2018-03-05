@@ -1,24 +1,24 @@
-<div class="movie" ng-style="{'background-image':'url({{vm.API_SETTINGS.imageUrl}}w1280{{vm.movie.backdrop_path}})'}">
+<div class="movie" ng-style="{'background-image': vm-movie.backdrop_path ? 'url({{vm.API_SETTINGS.imageUrl}}w1280{{vm.movie.backdrop_path}})' : ''}">
   <div class="movie__background">
     <div class="movie__poster-wrapper">
       <img ng-if="vm.movie.poster_path" ng-src="{{vm.API_SETTINGS.imageUrl}}w500{{vm.movie.poster_path}}">
-      <img ng-if="!vm.movie.poster_path" src="http://via.placeholder.com/185x278">
+      <img ng-if="!vm.movie.poster_path" src="http://via.placeholder.com/370x556">
     </div>
     <div class="movie__info-wrapper">
       <h1 class="movie__title">{{ vm.movie.title | uppercase }}</h1>
       <h2 class="movie__tagline">{{ vm.movie.tagline }}</h2>
       <p class="movie__overview">{{ vm.movie.overview }}</p>
       <ul class="movie__meta-block">
-        <li>Runtime:
+        <li ng-if="vm.movie.runtime">Runtime:
           <span class="movie__meta-text">{{ vm.movie.runtime }} minutes</span>
         </li>
-        <li>Rating:
+        <li ng-if="vm.movie.vote_average">Rating:
           <span class="movie__meta-text">{{ vm.movie.vote_average }} / 10</span>
         </li>
-        <li>Box Office:
+        <li ng-if="vm.movie.revenue">Box Office:
           <span class="movie__meta-text">{{ vm.movie.revenue | currency : '$' : 0 }}</span>
         </li>
-        <li>Budget:
+        <li ng-if="vm.movie-budget">Budget:
           <span class="movie__meta-text">{{ vm.movie.budget | currency : '$' : 0 }}</span>
         </li>
       </ul>

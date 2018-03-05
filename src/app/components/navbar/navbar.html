@@ -7,13 +7,14 @@
   </div>
   <div class="search">
     <input class="search__input" type="search" placeholder="Search for movies" ng-model="vm.query" ng-change="vm.handleInputChange()">
-    <ul class="search__results-wrapper">
-      <li class="search__results" ng-click="vm.handleClick()" ng-repeat="movie in vm.moviesList" ui-sref="movie({ movieId: movie.id })">
-        <img class="search__image" ng-if="movie.img" ng-src="{{ movie.img }}" alt="{{ movie.title }}" />
-        <img class="search__image" ng-if="!movie.img" src="http://via.placeholder.com/90x135" alt="placeholder for {{ movie.title }}"
-        />
+    <ul class="search__results-wrapper ">
+      <li class="search__results " ng-click="vm.handleClick() " ng-repeat="movie in vm.moviesList " ui-sref="movie({ movieId:
+      movie.id }) ">
+        <img class="search__image " ng-if="movie.img " ng-src="{{ movie.img }} " alt="{{ movie.title }} " />
+        <img class="search__image " ng-if="!movie.img " src="http://via.placeholder.com/90x135 " alt="placeholder for {{
+      movie.title }} " />
         <div>
-          <span class="search__text">{{ movie.title }}</span>
+          <span class="search__text ">{{ movie.title }}</span>
         </div>
       </li>
     </ul>
