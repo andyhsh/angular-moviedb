@@ -7,6 +7,7 @@ Main technologies used:
 * Angular 1.6
 * SASS
 * Webpack 3
+* ES6
 * TMDB api
 
 ## Install packages
