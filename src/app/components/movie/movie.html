@@ -1,4 +1,4 @@
-<div class="movie" ng-style="{'background-image': vm-movie.backdrop_path ? 'url({{vm.API_SETTINGS.imageUrl}}w1280{{vm.movie.backdrop_path}})' : ''}">
+<div class="movie" ng-style="{'background-image': vm.movie.backdrop_path ? 'url({{vm.API_SETTINGS.imageUrl}}w1280{{vm.movie.backdrop_path}})' : ''}">
   <div class="movie__background">
     <div class="movie__poster-wrapper">
       <img ng-if="vm.movie.poster_path" ng-src="{{vm.API_SETTINGS.imageUrl}}w500{{vm.movie.poster_path}}">
